@@ -28,8 +28,15 @@ public class MainActivity extends AppCompatActivity {
             // clear all data
             mDbAdapter.deleteAllTutors();
             // add now
-            mDbAdapter.createTutor("John Thompson", "Math       Rating: 3.5");
-            mDbAdapter.createTutor("Park Ji Yong", "English       Rating: 5");
+            mDbAdapter.createTutor("John Thompson", "Math        Rating: 3.5");
+            mDbAdapter.createTutor("Park Ji Yong", "English        Rating: 5.0");
+            mDbAdapter.createTutor("Rae Quaza", "Archaeology        Rating: 4.5");
+            mDbAdapter.createTutor("Bert Stein", "Physics        Rating: 5.0");
+            mDbAdapter.createTutor("To Youyou", "Biology        Rating: 4.5");
+            mDbAdapter.createTutor("Aaron Ong", "Math        Rating: 3.5");
+            mDbAdapter.createTutor("Clay Thomson", "Physiology        Rating: 3.0");
+            mDbAdapter.createTutor("Von New Man", "Math        Rating: 3.5");
+            mDbAdapter.createTutor("Tew Ring", "Computer        Rating: 4.8");
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
