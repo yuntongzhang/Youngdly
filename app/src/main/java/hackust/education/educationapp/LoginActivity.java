@@ -29,6 +29,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserLoginTask mAuthTask = null;
+
+    DatabaseHelper helper = new DatabaseHelper(this);
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -292,7 +295,25 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         int IS_PRIMARY = 1;
     }
 
+    // the logic after user sign in
     public void toSignIn(View view) {
+        //EditText a = (EditText) findViewById(R.id.email);
+        //String email = a.getText().toString();
+        //EditText b = (EditText) findViewById(R.id.password);
+        //String pass = b.getText().toString();
+
+        //String password = helper.searchPass(email);
+        //if (pass.equals(password)) {
+        Intent intent = new Intent(this, TeachOrLearn.class);
+        startActivity(intent);
+        //} else {
+        //    Toast temp = Toast.makeText(this, "Username and password don't match!", Toast.LENGTH_SHORT);
+        //    temp.show();
+        //}
+
+    }
+    // Go the sign up page
+    public void toSignUp(View view) {
         Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
     }
@@ -340,6 +361,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
+                Intent intent = new Intent(LoginActivity.this, TeachOrLearn.class);
+                startActivity(intent);
                 finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
