@@ -2,4 +2,6 @@
     <string name="app_name">EducationApp</string>
     <string name="action_settings">Settings</string>
     <string name="tutor_name">Tutor Name</string>
+    <string name="tutor_subject">Tutor Subject</string>
+    <string name="title_activity_teach_or_learn">TeachOrLearn</string>
 </resources>

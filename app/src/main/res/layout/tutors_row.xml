@@ -23,5 +23,13 @@
             android:layout_weight="1"
             android:text="@string/tutor_name"
             android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/row_subject"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/tutor_subject"
+            android:textSize="18sp"/>
     </LinearLayout>
 </LinearLayout>

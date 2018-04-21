@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = mDbAdapter.fetchAllTutors();
 
         // from columns defined in the db
-        String[] from = new String[]{TutorsDbAdaptor.COL_NAME};
+        String[] from = new String[]{TutorsDbAdaptor.COL_NAME, TutorsDbAdaptor.COL_SUBJECT};
 
         // to the ids of views in the layout
-        int[] to = new int[]{R.id.row_text};
+        int[] to = new int[]{R.id.row_text, R.id.row_subject};
 
         SimpleCursorAdapter mCursorAdapter = new SimpleCursorAdapter(
                 //context
