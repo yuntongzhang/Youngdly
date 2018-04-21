@@ -1,5 +1,6 @@
 package hackust.education.educationapp;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -38,7 +39,7 @@ public class TutorsDbAdaptor {
                     COL_SUBJECT + " TEXT );";
 
 
-    public TutorsDbAdaptor(Context ctx) {
+    TutorsDbAdaptor(Context ctx) {
         this.mCtx = ctx;
     }
 
@@ -74,12 +75,13 @@ public class TutorsDbAdaptor {
 
     //READ
     public Tutor fetchTutorById(int id) {
-        Cursor cursor = mDb.query(TABLE_NAME, new String[]{COL_ID,
+        @SuppressLint("Recycle") Cursor cursor = mDb.query(TABLE_NAME, new String[]{COL_ID,
                         COL_NAME, COL_SUBJECT}, COL_ID + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null
         );
         if (cursor != null)
             cursor.moveToFirst();
+        assert cursor != null;
         return new Tutor(
                 cursor.getInt(INDEX_ID),
                 cursor.getString(INDEX_NAME),

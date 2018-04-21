@@ -13,18 +13,15 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 public class MainActivity extends AppCompatActivity {
-    private ListView mListView;
-    private TutorsDbAdaptor mDbAdapter;
-    private SimpleCursorAdapter mCursorAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Listview logic starts here
-        mListView = (ListView) findViewById(R.id.tutors_list_view);
+        ListView mListView = (ListView) findViewById(R.id.tutors_list_view);
         mListView.setDivider(null);
-        mDbAdapter = new TutorsDbAdaptor(this);
+        TutorsDbAdaptor mDbAdapter = new TutorsDbAdaptor(this);
         mDbAdapter.open();
 
         if (savedInstanceState == null) {
@@ -32,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             mDbAdapter.deleteAllTutors();
             // add now
             mDbAdapter.createTutor("John", "Math");
+            mDbAdapter.createTutor("Park", "English");
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         // to the ids of views in the layout
         int[] to = new int[]{R.id.row_text};
 
-        mCursorAdapter = new SimpleCursorAdapter(
+        SimpleCursorAdapter mCursorAdapter = new SimpleCursorAdapter(
                 //context
                 MainActivity.this,
                 // the layout of the view
