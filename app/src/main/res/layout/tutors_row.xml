@@ -31,6 +31,6 @@
             android:layout_weight="1"
             android:text="@string/tutor_subject"
             android:gravity="end"
-            android:textSize="18sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 </LinearLayout>
