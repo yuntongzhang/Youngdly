@@ -1,16 +1,28 @@
 package hackust.education.educationapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // to the ids of views in the layout
         int[] to = new int[]{R.id.row_text, R.id.row_subject};
 
-        SimpleCursorAdapter mCursorAdapter = new SimpleCursorAdapter(
+        SimpleCursorAdapter mCursorAdapter = new CustomCursorAdapter(
                 //context
                 MainActivity.this,
                 // the layout of the view
@@ -76,7 +88,21 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        //Button b = (Button) findViewById(R.id.choose_tutor);
+
+        //b.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        startActivity(new Intent(MainActivity.this, Pop.class));
+         //   }
+        //});
     }
+
+    //public void toChoose(View view) {
+    //    Intent intent = new Intent(this, Pop.class);
+    //    startActivity(intent);
+    //}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -99,4 +125,49 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private class CustomCursorAdapter extends SimpleCursorAdapter {
+
+        public CustomCursorAdapter(@NonNull Context context, int layout, Cursor c, String[] from,
+                int[] to, int flags) {
+            super(context, layout, c, from, to, flags);
+        }
+
+        @Override
+        public View newView(Context context, Cursor cursor, ViewGroup parent) {
+            return super.newView(context, cursor, parent);
+        }
+
+        @Override
+        public void bindView(View view, Context context, Cursor cursor) {
+            super.bindView(view, context, cursor);
+
+            ViewHolder holder = (ViewHolder) view.getTag();
+            if (holder == null) {
+                holder = new ViewHolder();
+                holder.button = view.findViewById(R.id.choose_tutor);
+                holder.name = view.findViewById(R.id.row_text);
+                holder.subject = view.findViewById(R.id.row_subject);
+                view.setTag(holder);
+            }
+
+            holder.button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, Pop.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
+    }
+
+    public class ViewHolder {
+        Button button;
+        TextView name;
+        TextView subject;
+
+    }
+
+
 }
