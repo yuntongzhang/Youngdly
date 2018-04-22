@@ -41,6 +41,10 @@ public class SeeStudentActivity extends AppCompatActivity {
             mDbAdapter.deleteAllStudents();
             // add now
             mDbAdapter.createStudent("Einsten", "Physics", "Rating: 5");
+            mDbAdapter.createStudent("Einfour", "CS", "Rating: 4.5");
+            mDbAdapter.createStudent("Einthree", "Chemistry", "Rating: 2");
+            mDbAdapter.createStudent("Eintwo", "Medicine", "Rating: 3");
+            mDbAdapter.createStudent("Einone", "Math", "Rating: 4");
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
