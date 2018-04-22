@@ -32,4 +32,9 @@ public class TeachOrLearn extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void toTeach(View view) {
+        Intent intent = new Intent(this, SeeStudentActivity.class);
+        startActivity(intent);
+    }
+
 }

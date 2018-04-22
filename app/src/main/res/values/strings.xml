@@ -19,4 +19,8 @@
         completions."
     </string>
     <string name="title_activity_pop">Pop</string>
+    <string name="title_activity_see_student">SeeStudentActivity</string>
+    <string name="student_name">Student Name</string>
+    <string name="student_subject">Student Subject</string>
+    <string name="student_rating">Student Rating</string>
 </resources>

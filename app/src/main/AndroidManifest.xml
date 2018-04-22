@@ -17,11 +17,11 @@
         <activity
             android:name=".TeachOrLearn"
             android:label="@string/title_activity_teach_or_learn"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
@@ -35,6 +35,10 @@
         <activity
             android:name=".Pop"
             android:label="@string/title_activity_pop"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SeeStudentActivity"
+            android:label="@string/title_activity_see_student"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
