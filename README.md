@@ -1,6 +1,6 @@
 # Introduction
 
-* hackUST2018 - Education Technology *
+*hackUST2018 - Education Technology*
 
 In many developed countries, there is theproblem of an aging population and the resulting generation gap between different age groups. This resulting generation gap escalates conflicts between elderly and younger generation due to less and less interactions and low empathy between these two age groups.
 
@@ -20,7 +20,7 @@ This application is a social tool to provide opportunities for the youth and eld
 
 # Other Features to be Added
 
-* These features are to increase engagement and retention of users. *
+*These features are to increase engagement and retention of users.*
 
 #### Point System
 
